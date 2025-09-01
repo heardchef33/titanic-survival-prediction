@@ -10,21 +10,21 @@ The project is structured as a series of attempts, with each Jupyter notebook bu
 
 My approach was to start simple and incrementally add complexity, carefully observing the impact of each change on the model's performance.
 
-### Notebook 1: `1_baseline_predictions.ipynb`
+### Notebook 1: `base-line-predictions.ipynb`
 * **Objective**: Establish a performance benchmark.
 * **Techniques**:
     * **Imputation**: I used basic, straightforward methods to handle missing values (e.g., filling missing ages with the mean/median and missing embarkment ports with the mode).
     * **Models**: Implemented baseline models like **Logistic Regression** to get an initial score.
 * **Outcome**: This notebook provides the foundational score that all future experiments are measured against.
 
-### Notebook 2: `2_advanced_imputation.ipynb`
+### Notebook 2: `iterative-imputation-rf-predictions.ipynb`
 * **Objective**: Improve the model's performance by using a more sophisticated imputation strategy.
 * **Techniques**:
     * **Imputation**: Replaced the simple imputer with `IterativeImputer` (Multivariate Imputation) to predict missing `Age` values based on the relationships with other features.
     * **Models**: Utilized a more powerful ensemble model, **Random Forest**, to capture more complex patterns in the data.
 * **Outcome**: This attempt aimed to see if a better imputation technique and a stronger model could lift the baseline score.
 
-### Notebook 3: `3_feature_engineering.ipynb`
+### Notebook 3: `advanced-imputation-feature-eng-predictions.ipynb`
 * **Objective**: Achieve the highest possible score by creating new, meaningful features from the existing data.
 * **Techniques**:
     * **Feature Engineering**: Created new features such as `FamilySize` (from `SibSp` and `Parch`), `IsAlone`, and extracted `Title` (e.g., 'Mr.', 'Mrs.', 'Miss') from the `Name` column.
